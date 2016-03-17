@@ -9,7 +9,7 @@ public class MySecondService {
 	@Inject
 	public MySecondService(MyFirstService myFirstService) {
 		this.myFirstService = myFirstService;
-		System.out.println("MyObjectContainer constructor myFirstService=" + myFirstService);
+		System.out.println("MySecondService constructor myFirstService=" + myFirstService);
 	}
 
 	@Override

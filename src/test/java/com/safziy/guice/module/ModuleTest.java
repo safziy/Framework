@@ -19,5 +19,11 @@ public class ModuleTest {
 
 		MyObjectContainer myObjectContainer2 = injector.getInstance(MyObjectContainer.class);
 		System.out.println(myObjectContainer2);
+
+		MyThirdService myThirdService = injector.getInstance(MyThirdService.class);
+		System.out.println(myThirdService);
+		
+		MyThirdService myThirdService1 = injector.getInstance(MyThirdService.class);
+		System.out.println(myThirdService1);
 	}
 }
