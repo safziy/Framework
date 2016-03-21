@@ -7,7 +7,7 @@ public class MyThirdModule extends AbstractModule {
 	@Override
 	protected void configure() {
 		System.out.println("MyThirdModule configure()");
-		// ÒÔÏÂ´úÂë»á²úÉúÑ­»·ÒÀÀµ
+		// ä»¥ä¸‹ä»£ç ä¼šäº§ç”Ÿå¾ªç¯ä¾èµ–
 		// bind(MyFirstService.class).in(Singleton.class);
 		// bind(MySecondService.class).in(Singleton.class);
 	}
