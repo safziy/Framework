@@ -20,7 +20,7 @@ public class NIOEchoServer implements Runnable {
 			selector = Selector.open();
 			serverSocketChannel = ServerSocketChannel.open();
 			serverSocketChannel.configureBlocking(false);
-			serverSocketChannel.socket().bind(new InetSocketAddress("localhost", port), 1024);
+			serverSocketChannel.socket().bind(new InetSocketAddress(port), 1024);
 			serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 			System.out.println("The nioEchoServer start at port " + port);
 		} catch (IOException e) {
@@ -49,7 +49,7 @@ public class NIOEchoServer implements Runnable {
 							SocketChannel sc = (SocketChannel) key.channel();
 							ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
 							int readBytes = sc.read(byteBuffer);
-							if(readBytes > 0){
+							if (readBytes > 0) {
 								byteBuffer.flip();
 								byte[] bytes = new byte[byteBuffer.remaining()];
 								byteBuffer.get(bytes);
@@ -61,7 +61,7 @@ public class NIOEchoServer implements Runnable {
 								responeByteBuffer.put(responeBytes);
 								responeByteBuffer.flip();
 								sc.write(responeByteBuffer);
-							}else if(readBytes < 0){
+							} else if (readBytes < 0) {
 								System.out.println("client closed ... ");
 								iterator.remove();
 								sc.close();
